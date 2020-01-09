@@ -1,133 +1,155 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* css for password generator
+written by Letty Bedard */
+/* style.css for the profile page */
+/* written by/for Letty Bedard */
+
+@media (max-width: 767px) {
+  .smallCenter{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    }
+
+  .smallScreen{
+    width: 100%;
+    }    
+
+  .imageSizing{
+
+    }
+
+  }  
+
+body{
+  font-family: 'Arial', 'Helvetica Nue', Helvetica, sans-serif;
+  color: #777777;
+  margin-top: 30px;
+  background-image: url("../assets/images/cork-board.png");
 }
 
-html,
-body,
-.wrapper {
-  height: 100%;
-  margin: 0;
+.noPad{
   padding: 0;
 }
 
-body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
+.noMargin{
+  margin: 0;
 }
 
-.wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-header {
-  text-align: center;
-  padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
-}
-
-.card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
-  border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 30px 40px;
-}
-
-.card-header::after {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
-.card-body {
-  min-height: 100px;
-}
-
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
-.card-footer::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-.btn {
+.noBorder{
   border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
-  display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+}
+
+.centerText{
   text-align: center;
-  cursor: pointer;
 }
 
-button[disabled] {
-  cursor: default;
-  background: #c0c7cf;
-}
-
-.float-right {
+.floatRight{
   float: right;
 }
 
-#password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+.rightJustify{
+  justify-content: right;
+}
+
+.textRight{
+  text-align: right;
+}
+
+a.plain:visited,a.plain:hover, a.plain:any-link{
+  padding: 0 15px;
+  text-decoration: none;
+  color: #777777;
+}
+
+hr.horizontalLine {
+  background-color: #cccccc;
+  height: 1px;
   border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+} 
+
+div.mainPanel{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #cccccc;
+  border-bottom: 3px solid #4aaaa5;
+}
+
+div.panelContent{
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+h2.sectionContent{
+  font-family:'Georgia', 'Times New Roman', Times, serif;
+  color: #4aaaa5;
+
+  margin: 20px;
+}
+
+hr.dividerLine{
+  background-color: #cccccc;
+  height: 1px;
+  border: none;
+  padding: 0;
+  margin: 0px 20px; 
+}
+
+div.contentBox{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+div.copyContent{
+  font-family: 'Arial', 'Helvetica Nue', Helvetica, sans-serif;
+}
+
+div.stuffBox{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+div.titleBox{
+  background-color: #4aaaa5;
+  color: #ffffff;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* margin-top: 150px; */
 }
 
-@media (max-width: 690px) {
-  .btn {
-    font-size: 1rem;
-    margin: 16px 0px 0px 0px;
-    padding: 10px 15px;
-  }
-
-  #password {
-    font-size: 1rem;
-  }
+form.fullWidth{
+  width: 100%;
 }
 
-@media (max-width: 500px) {
-  .btn {
-    font-size: 0.8rem;
-  }
+button.submit{
+  background-color: #4aaaa5;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+}
+
+footer.footerStyle{
+  background-color: #666666;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 3px solid #4aaaa5;
+}     
+
+div.footerText{
+  color: #ffffff;
+  padding-top: 10px;
 }

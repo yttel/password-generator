@@ -1,25 +1,40 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// int desiredLength = input from text box (cleaned and checked)
+// let debug = true; //make true when debugging
+// int inputLength = input from text box (cleaned and checked)
 // let selectedTypes = array containing which types they want
+// let debug = true;
 
-// let lowerCase = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z);
-// let upperCase = new Array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
-// let numerals = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-// let specialChars = new Array("!","#","$","%","&","(",")","*","+","-",".","/",":",";","<","=",">","?","@");
-// let charTypes = new Array(lowerCase, upperCase, numerals, specialChars);
+// const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+// const upperCase = lowerCase.toUpperCase();
+// const numerals = "0123456789";
+// const specialChars = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+// let charTypes = concat of the type(s) they select
+// let password, charTypes = "";
 
-// let password = "";
-// let random = 0;
-
-//while password.length < desiredLength{
-//  random = Math.floor(Math.random() * 3);   
-//  if(selectedTypes.indexOf(random) >= 0){ 
-//    password += charTypes[rand[Math.floor(Math.random() * (charTypes.length))]];
+//set the charTypes string based on their selections
+//if (selectedTypes.includes(lowerCaseCheck)){
+//  charTypes+=lowerCase;
+//}
+//if (selectedTypes.includes(upperCaseCheck)){
+//  charTypes+=upperCase;
+//}//if (selectedTypes.includes(numeralCheck)){
+//  charTypes+=numerals;
+//}//if (selectedTypes.includes(specialCharsCheck)){
+//  charTypes+=specialChars;
+//}
+//for (let i=0; i < inputLength; i++){
+//    password += charTypes[Math.floor(Math.random() * (charTypes.length))]; 
 //  }
+//return password;
 //}
 
+
+// function atLeastOneCheckboxIsChecked(){
+//   const checkboxes = Array.from(document.querySelectorAll(".checkbox"));
+//   return checkboxes.reduce((acc, curr) => acc || curr.checked, false);
+// }
 
 
 // Write password to the #password input
