@@ -42,11 +42,11 @@
                 <form class="fullWidth">
                 
                   <div class="form-group row">
-                    <label for="inputLength" class="col-sm-6 col-form-label centerText">
+                    <label for="inputLength" class="col-sm-12 col-md-6 col-form-label centerText">
                       Desired Length (8-128):
                     </label>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-12 col-md-6">
                       <input type="number" class="form-control" id="inputLength" min="8" max="128" placeholder="">
                     </div>
                   </div>
@@ -79,12 +79,29 @@
                     </label>
                   </div>
 
-                  <button class="submit"> <!--disabled until one box is checked-->
+                  <button class="myButton"> <!--only works if at least one button is pressed, use atLeastOne()?-->
                     Generate
                   </button>
                 </form>
               
-              </div> <!--content below heading and line-->
+              </div> <!--form and button-->
+
+              <hr class="dividerLine">
+
+              <div class="contentBox">
+                
+                <form class="fullWidth">
+                
+                  <!-- text box to dump password with copy button, check bootstrap?-->
+
+                  <button class="myButton"> 
+                    Copy
+                  </button>
+                </form>
+              
+              </div> <!--password and copy button-->
+
+              
             </div>  <!--content area-->
           </div>
           

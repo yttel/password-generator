@@ -13,11 +13,6 @@ written by Letty Bedard */
   .smallScreen{
     width: 100%;
     }    
-
-  .imageSizing{
-
-    }
-
   }  
 
 body{
@@ -129,11 +124,13 @@ form.fullWidth{
   width: 100%;
 }
 
-button.submit{
+button.myButton{
   background-color: #4aaaa5;
   color: #ffffff;
   border: none;
+  border-radius: 5px;
   padding: 5px 10px;
+  margin: 20px;
 }
 
 footer.footerStyle{

@@ -31,7 +31,7 @@ var generateBtn = document.querySelector("#generate");
 //}
 
 
-// function atLeastOneCheckboxIsChecked(){
+// function atLeastOne(){
 //   const checkboxes = Array.from(document.querySelectorAll(".checkbox"));
 //   return checkboxes.reduce((acc, curr) => acc || curr.checked, false);
 // }
