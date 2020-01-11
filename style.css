@@ -129,6 +129,10 @@ div.instructions{
   color: red;
 }
 
+.isHiding{
+  display: none;
+}
+
 form.fullWidth{
   width: 100%;
 }

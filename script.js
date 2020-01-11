@@ -7,6 +7,8 @@ let instructionText = document.getElementsByClassName("instructions");
 
 let somethingChecked = document.getElementsByClassName("form-check-input"); 
 
+let resultsBox = document.getElementById("results");
+
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = lowerCase.toUpperCase();
 const numerals = "0123456789";
@@ -14,7 +16,7 @@ const specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
    
 function generatePassword(){
   let password = "", 
-  charTypes = "";
+      charTypes = "";
 
   let inputLength = document.getElementById("passwordLength").value; //input from form 
 
@@ -37,7 +39,6 @@ function generatePassword(){
 
   for (let i=0; i < inputLength; i++){
     password += charTypes[Math.floor(Math.random() * (charTypes.length))]; 
-    console.log(password);
     }
 
   return password;
@@ -46,13 +47,12 @@ function generatePassword(){
 // Write password to the #password input
 function writePassword() {
 
-  console.log(document.getElementById("newPassword"));
   document.getElementById("newPassword").value = generatePassword();
-  copyBtn.removeAttribute("disabled");
-  copyBtn.focus();
+  
+  resultsBox.classList.remove("isHiding"); //show the results pane
 }
 
-function copyToClipboard() {
+function copyToClipboard() { //copy to clipboard
   // BONUS 
 }
 
@@ -69,13 +69,17 @@ function atLeastOne(){
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", function(){
-  if(atLeastOne()){
+  if(atLeastOne() && document.getElementById("passwordLength").value){ //length is truthy
     writePassword(); 
     }
   
-  else { //change instruction text to red 
+  else if (!atLeastOne()){ //change instruction text to red 
   instructionText[0].classList.add("warn");
   }
 });
 
 // BONUS EVENT LISTENER
+copyBtn.addEventListener("click", function(event){ //when the copy button is clicked
+  event.preventDefault()
+  copyToClipboard();
+});
