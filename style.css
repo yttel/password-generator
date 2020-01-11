@@ -120,6 +120,15 @@ div.titleBox{
   /* margin-top: 150px; */
 }
 
+div.instructions{
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.warn{
+  color: red;
+}
+
 form.fullWidth{
   width: 100%;
 }

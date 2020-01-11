@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Password Generator page -->
+<!-- written by/for Letty Bedard -->
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Password Generator by Letty Bedard">
+    <meta name="author" content="Letty Bedard">
+    <meta name="keywords" content="password generator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Password Generator</title>
+
+  </head>
+  <body>
+
+    <script>
+
+      const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+      const upperCase = lowerCase.toUpperCase();
+      const numerals = "0123456789";
+      const specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+
+      let password = "", 
+          charTypes = "";
+
+      let inputLength = parseInt(prompt("Length: "));//input from form (cleaned and checked)
+      let selectedTypes = prompt("Types (1-lower, 2-upper, 3-num, 4-special):"); //string with types they checked
+      
+      //set the charTypes string based on their selections
+      if (selectedTypes.includes(1)){
+        charTypes+=lowerCase;
+        }
+
+      if (selectedTypes.includes(2)){
+        charTypes+=upperCase;
+        }
+
+      if (selectedTypes.includes(3)){
+        charTypes+=numerals;
+        }
+
+      if (selectedTypes.includes(4)){
+        charTypes+=specialChars;
+        }
+
+      for (let i=0; i < inputLength; i++){
+        password += charTypes[Math.floor(Math.random() * (charTypes.length))]; 
+        console.log(password);
+        }
+          
+    </script>
+  </body>
+</html>
