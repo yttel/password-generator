@@ -1,61 +1,52 @@
 // Define hooks
 let generateBtn = document.getElementById("generate");
-console.log(generateBtn);
 
 let copyBtn = document.getElementById("copy");
 
-
 let instructionText = document.getElementsByClassName("instructions");
-console.log("This is instructionText: " , instructionText[0]);
-console.log("Classes: " , instructionText[0].classList)
 
-let somethingChecked = document.getElementsByClassName("form-check-input");
-console.log(somethingChecked);
+let somethingChecked = document.getElementsByClassName("form-check-input"); 
 
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = lowerCase.toUpperCase();
 const numerals = "0123456789";
 const specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
    
-// function atLeastOne(){
-//   const checkboxes = Array.from(document.querySelectorAll(".checkbox"));
-//   return checkboxes.reduce((acc, curr) => acc || curr.checked, false);
-// }
-
-
 function generatePassword(){
   let password = "", 
   charTypes = "";
 
-  let inputLength = (document.getElementById(passwordLength)).value; //input from form 
+  let inputLength = document.getElementById("passwordLength").value; //input from form 
 
-//set the charTypes string based on their selections
-if (somethingChecked.includes(lowerCaseCheck)){
-  charTypes+=lowerCase;
-  console.log("lowerCase added");
-  }
+  //set the charTypes string based on their selections
+  if (somethingChecked[0].checked){ //lowercase checked
+    charTypes+=lowerCase;
+    }
 
-if (selectedTypes.includes(2)){
-  charTypes+=upperCase;
-  }
+  if (somethingChecked[1].checked){ //uppercase checked
+    charTypes+=upperCase; 
+    }
 
-if (selectedTypes.includes(3)){
-  charTypes+=numerals;
-  }
+  if (somethingChecked[2].checked){ //numbers checked
+    charTypes+=numerals;
+    }
 
-if (selectedTypes.includes(4)){
-  charTypes+=specialChars;
-  }
+  if (somethingChecked[3].checked){ //specials checked
+    charTypes+=specialChars;
+    }
 
-for (let i=0; i < inputLength; i++){
-  password += charTypes[Math.floor(Math.random() * (charTypes.length))]; 
-  console.log(password);
+  for (let i=0; i < inputLength; i++){
+    password += charTypes[Math.floor(Math.random() * (charTypes.length))]; 
+    console.log(password);
+    }
+
+  return password;
   }
-}
 
 // Write password to the #password input
 function writePassword() {
 
+  console.log(document.getElementById("newPassword"));
   document.getElementById("newPassword").value = generatePassword();
   copyBtn.removeAttribute("disabled");
   copyBtn.focus();
