@@ -1,9 +1,16 @@
 // Define hooks
 let generateBtn = document.getElementById("generate");
+console.log(generateBtn);
 
 let copyBtn = document.getElementById("copy");
 
+
 let instructionText = document.getElementsByClassName("instructions");
+console.log("This is instructionText: " , instructionText[0]);
+console.log("Classes: " , instructionText[0].classList)
+
+let somethingChecked = document.getElementsByClassName("form-check-input");
+console.log(somethingChecked);
 
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = lowerCase.toUpperCase();
@@ -17,10 +24,6 @@ const specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 
 function generatePassword(){
-  let somethingChecked = document.getElementsByClassName("form-check-input");
-
-  console.log(somethingChecked);
-
   let password = "", 
   charTypes = "";
 
@@ -80,7 +83,7 @@ generateBtn.addEventListener("click", function(){
     }
   
   else { //change instruction text to red 
-  instructionText.classList.add("warn");
+  instructionText[0].classList.add("warn");
   }
 });
 
