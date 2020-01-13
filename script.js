@@ -53,7 +53,8 @@ function writePassword() {
 }
 
 function copyToClipboard() { //copy to clipboard
-  // BONUS 
+    document.getElementById('newPassword').select();
+    document.execCommand('copy');
 }
 
 function atLeastOne(){
