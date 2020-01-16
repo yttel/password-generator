@@ -7,7 +7,9 @@ let instructionText = document.getElementsByClassName("instructions");
 
 let somethingChecked = document.getElementsByClassName("form-check-input"); 
 
-let resultsBox = document.getElementById("results");
+let resultsBox = document.getElementById("resultsPane");
+
+let allOfIt = document.getElementById("allTheThings");
 
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = lowerCase.toUpperCase();
@@ -49,6 +51,11 @@ function writePassword() {
 
   document.getElementById("newPassword").value = generatePassword();
   
+  // // create two columns - info left, results right
+  // allOfIt.children[0].classList.add("col-xs-12 col-sm-6");
+  // allOfIt.children[1].classList.add("col-xs-12 col-sm-6");
+  
+
   resultsBox.classList.remove("isHiding"); //show the results pane
 }
 
