@@ -21,8 +21,8 @@
   </head>
   <body>
 
-    <div class="mainPanel noMargin smallScreen"> <!--main content panel-->
-      <div class="container noMargin smallScreen"> <!--container-->
+    <div class="mainPanel m-0 smallScreen"> <!--main content panel-->
+      <div class="container smallScreen"> <!--container-->
 
         <div class="row">
 
@@ -37,13 +37,12 @@
       
               <hr class="dividerLine">
 
-              <div class="container"> <!--holds both panes-->
-                <div class="row" id="allTheThings">
-                  <div class="col-sm-3">
+                <div class="row m-0" id="allTheThings">
+                  <div class="mx-0 col-sm-3">
                     <!-- placeholder for space before results are in -->
                   </div>
                   
-                  <div class="contentBox col-sm-5" id="inputBox"> <!--input pane-->
+                  <div class="contentBox mx-0 col-sm-6" id="inputBox"> <!--input pane-->
                     
                     <form class="fullWidth">
                       
@@ -58,72 +57,73 @@
                       </div>
       
                       <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="lowerCaseCheck">
+                          <input class="form-check-input" type="checkbox" value="" data-charString="lowerCase">
                           <label class="form-check-label" for="lowerCaseCheck">
                             Lower case letters
                           </label>
                       </div>
       
                       <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="upperCaseCheck">
+                          <input class="form-check-input" type="checkbox" value="" data-charString="upperCase">
                           <label class="form-check-label" for="upperCaseCheck">
                             Upper case letters
                           </label>
                       </div>
       
                       <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="numeralCheck">
+                          <input class="form-check-input" type="checkbox" value="" data-charString="numerals">
                           <label class="form-check-label" for="numeralCheck">
                             Numbers
                           </label>
                       </div>
       
                       <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="specialCharsCheck">
+                          <input class="form-check-input" type="checkbox" value="" data-charString="lowerCase">
                           <label class="form-check-label" for="specialCharsCheck">
                             Special characters
                           </label>
                       </div>
       
-                      <div class="instructions" id="instructions">
+                      <div class="instructions text-center" id="instructions">
                           Select at least one type.
                       </div>
       
-                      <button class="myButton" id="generate" type="button"> <!--only works if at least one type is checked-->
+                      <button class="myButton text-center" id="generate" type="button"> <!--only works if at least one type is checked-->
                         Generate
                       </button>
                     </form>
                     
                   </div> <!--form and button pane-->
 
-                  <div class="isHiding" id="resultsPane">
-                    <div class="contentBox"> <!--output-->
-                
-                      <form class="fullWidth" id="results">
-                      
-                        <!-- text box to dump password with copy button, check bootstrap?-->
-      
-                        <textarea
-                        readonly
-                        class="fullWidth d-block form-control"
-                        id="newPassword"
-                        placeholder=""
-                        ></textarea>
+                  <div class="mx-0 col-sm-3">
+                    <div class="isHiding" id="resultsPane">
+                      <div class="contentBox"> <!--output-->
+                  
+                        <form class="fullWidth" id="results">
                         
-                        <button class="myButton" id="copy"> 
-                          Copy
-                        </button>
-                      </form>
-                    
-                    </div> <!--password and copy button-->
-
-                  </div> <!--results pane-->
-
-                  <div class="col-sm-3">
-                    <!-- placeholder for space before results are in -->
+                          <!-- text box to dump password with copy button, check bootstrap?-->
+        
+                          <textarea
+                          readonly
+                          class="fullWidth d-block form-control"
+                          id="newPassword"
+                          placeholder=""
+                          rows="8"
+                          ></textarea>
+                          
+                          <button class="myButton" id="copy"> 
+                            Copy
+                          </button>
+                          <button class="myButton">
+                            Reset
+                          </button>
+                        </form>
+                      
+                      </div> <!--password and copy button-->
+  
+                    </div> <!--results pane-->
                   </div>
                 </div> <!--row-->
-              </div> <!--container with all panes-->
 
             </div>  <!--content area-->
           </div>

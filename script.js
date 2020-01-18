@@ -1,4 +1,3 @@
-// Define hooks
 let generateBtn = document.getElementById("generate");
 
 let copyBtn = document.getElementById("copy");
@@ -15,12 +14,19 @@ const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = lowerCase.toUpperCase();
 const numerals = "0123456789";
 const specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+
+const allTypes = {
+  lowerCase: "abcdefghijklmnopqrstuvwxyz",
+  // fill in rest of these
+}
    
 function generatePassword(){
   let password = "", 
       charTypes = "";
 
   let inputLength = document.getElementById("passwordLength").value; //input from form 
+
+  // console.log(allTypes[somethingChecked[0].getAttribute("data-charString")]);
 
   //set the charTypes string based on their selections
   if (somethingChecked[0].checked){ //lowercase checked
@@ -37,7 +43,7 @@ function generatePassword(){
 
   if (somethingChecked[3].checked){ //specials checked
     charTypes+=specialChars;
-    }
+  }
 
   for (let i=0; i < inputLength; i++){
     password += charTypes[Math.floor(Math.random() * (charTypes.length))]; 
@@ -48,15 +54,28 @@ function generatePassword(){
 
 // Write password to the #password input
 function writePassword() {
+  
+  let child1 = allOfIt.children[1];
+  let child2 = allOfIt.children[2];
 
   document.getElementById("newPassword").value = generatePassword();
   
   // // create two columns - info left, results right
-  // allOfIt.children[0].classList.add("col-xs-12 col-sm-6");
-  // allOfIt.children[1].classList.add("col-xs-12 col-sm-6");
+  addRemoveClass(allOfIt.children[0], "remove","col-sm-3");
+  addRemoveClass(child2, "remove","col-sm-3");
+  addRemoveClass(child2, "add", "col-sm-6");
   
+  //show the results pane
+  resultsBox.classList.remove("isHiding");
+}
 
-  resultsBox.classList.remove("isHiding"); //show the results pane
+function addRemoveClass(element, command, className){
+  if (command === "add"){
+    element.classList.add(className);
+  }
+  else if(command === "remove"){
+    element.classList.remove(className);
+  }
 }
 
 function copyToClipboard() { //copy to clipboard

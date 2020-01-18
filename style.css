@@ -3,21 +3,11 @@ written by Letty Bedard */
 /* style.css for the profile page */
 /* written by/for Letty Bedard */
 
-@media (max-width: 767px) {
-  .smallScreen{
-    width: 100%;
-    }    
-  }  
-
 body{
   font-family: 'Arial', 'Helvetica Nue', Helvetica, sans-serif;
   color: #777777;
   margin-top: 30px;
   background-image: url("cork-board.png");
-}
-
-.noMargin{
-  margin: 0;
 }
 
 .centerText{
@@ -40,7 +30,6 @@ div.panelContent{
 h2.sectionContent{
   font-family:'Georgia', 'Times New Roman', Times, serif;
   color: #4aaaa5;
-
   margin: 20px;
 }
 
@@ -69,6 +58,10 @@ div.instructions{
 
 .isHiding{
   display: none;
+}
+
+#resultsPane{
+  margin-top: 35px;
 }
 
 form.fullWidth{
