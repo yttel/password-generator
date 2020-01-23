@@ -55,7 +55,6 @@ function generatePassword(){
 // Write password to the #password input
 function writePassword() {
   
-  let child1 = allOfIt.children[1];
   let child2 = allOfIt.children[2];
 
   document.getElementById("newPassword").value = generatePassword();
@@ -92,16 +91,21 @@ function atLeastOne(){
     }
   }
   return thereIs;
-}
+} 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", function(){
-  if(atLeastOne() && document.getElementById("passwordLength").value){ //length is truthy
+  let pwLength = document.getElementById("passwordLength").value;
+
+  if (!atLeastOne()){ //change instruction text to red 
+    instructionText[0].classList.add("warn");
+  }
+  else if(pwLength < 8 || pwLength > 128) { //length isn't in range
+    alert("Desired length must be a number between 8 and 128!");
+  }
+
+  else { // at least one checked and length ok
     writePassword(); 
-    }
-  
-  else if (!atLeastOne()){ //change instruction text to red 
-  instructionText[0].classList.add("warn");
   }
 });
 
